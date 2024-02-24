@@ -11,6 +11,8 @@ export class RegisterComponent {
   form:Jobseeker = {
     fullname:'',
     email:'',
+    mobile: '',
+    resume: File,
     password:'',
     cpassword:''
   }
