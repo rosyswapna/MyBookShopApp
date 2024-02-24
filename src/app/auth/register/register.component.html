@@ -1,0 +1,36 @@
+<div class="w-screen">
+    <form (ngSubmit)="submit()" class="p-4 rounded-lg border ">
+        <h1 class="text-center text-xl">Register Here</h1>
+        <div class="flex">
+            <div class="w-1/2 mx-4">
+                <div>
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" [(ngModel)]="form.fullname" #fullname="ngModel" name="fullname" class="p-2 rounded w-full border" placeholder="Full Name" required />
+                </div>
+                <div *ngIf="fullname.invalid && fullname.touched" class="p-2 rounded bg-red-200 text-red-800">Full name required</div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" [(ngModel)]="form.email" #email="ngModel" name="email" class="p-2 rounded w-full border" placeholder="Email" required />
+                </div>
+                <div *ngIf="email.invalid && email.touched" class="p-2 rounded bg-red-200 text-red-800">Email required</div>
+            </div>
+            <div class="w-1/2 mx-4">
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" [(ngModel)]="form.password" #password="ngModel" name="password" class="p-2 rounded w-full border" placeholder="Password" required/>
+                </div>
+                <div *ngIf="password.invalid && password.touched" class="p-2 rounded bg-red-200 text-red-800">Password required</div>
+                <div>
+                    <label for="cpassword">Confirm Password</label>
+                    <input type="cpassword" id="cpassword" [(ngModel)]="form.cpassword" #cpassword="ngModel" name="cpassword" class="p-2 rounded w-full border" placeholder="Confirm Password" required/>
+                </div>
+                <div *ngIf="cpassword.invalid && cpassword.touched" class="p-2 rounded bg-red-200 text-red-800">Confirm Password required</div>
+            </div>
+        </div>
+              
+        
+        <div class="w-full text-center p-4">
+            <input type="submit" value="Register" class="p-2 w-32 bg-blue-800 text-white hover:bg-blue-700 rounded"/>
+        </div>
+    </form>
+</div>
